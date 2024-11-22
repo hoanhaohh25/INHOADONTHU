@@ -42,8 +42,8 @@
 <body>
     <div class="header">HÓA ĐƠN TIỀN NHÀ</div>
     <div class="sub-header">
-        Tháng <span id="thang">10</span>/ <span id="nam">2024</span><br>
-        (Từ ngày <span id="tu-ngay">01/10/2024</span> đến <span id="den-ngay">31/10/2024</span>)
+        Tháng <span id="thang"><<[Thang]>></span>/ <span id="nam"><<[Nam]>></span><br>
+        (Từ ngày <span id="tu-ngay"><<[TuNgay]>></span> đến <span id="den-ngay"><<[DenNgay]>></span>)
     </div>
 
     <table>
@@ -52,19 +52,19 @@
         </tr>
         <tr>
             <td>Họ tên KH</td>
-            <td id="ho-ten-kh">Dương Quốc Tân</td>
+            <td id="ho-ten-kh"><<[HoVaTenKH]>></td>
         </tr>
         <tr>
             <td>Nhà</td>
-            <td id="nha">BDSCT02 - Hẻm 80 Trần Văn Xã</td>
+            <td id="nha"><<[TenBDS]>></td>
         </tr>
         <tr>
             <td>Phòng</td>
-            <td id="phong">BDSCT02 - MTA</td>
+            <td id="phong"><<[TenPhong]>></td>
         </tr>
         <tr>
             <td>ID Thu</td>
-            <td id="id-thu">67f1f3c6 BDSCT02 - MTA 10 2024</td>
+            <td id="id-thu"><<[IDThu]>></td>
         </tr>
     </table>
 
@@ -74,32 +74,67 @@
             <th>Số tiền (VND)</th>
         </tr>
         <tr>
-            <td>Tiền nhà (Từ ngày <span id="tu-ngay">01/10/2024</span> đến <span id="den-ngay">31/10/2024</span>)</td>
-            <td id="tien-nha">2,000,000</td>
+            <td>Tiền nhà (Từ ngày <<[TuNgay]>> đến <<[DenNgay]>>)</td>
+            <td id="tien-nha"><<[TienSoNgayThuePhong]>></td>
         </tr>
         <tr>
-            <td>Tiền điện (CS cũ: 1,020 , CS mới: 1,123, SD: 103)</td>
-            <td id="tien-dien">360,500</td>
+            <td>Tiền điện (CS cũ: <<[SoDienCu]>>, CS mới: <<[SoDienMoi]>>, SD: <<[SoKWDienSuDung]>>)</td>
+            <td id="tien-dien"><<[TongTienDien]>></td>
         </tr>
         <tr>
-            <td>Tiền nước (CS cũ: 30, CS mới: 32, SD: 2)</td>
-            <td id="tien-nuoc">26,000</td>
+            <td>Tiền nước (CS cũ: <<[SoNuocCu]>>, CS mới: <<[SoNuocMoi]>>, SD: <<[SoM3NuocSuDung]>>)</td>
+            <td id="tien-nuoc"><<[TongTienNuoc]>></td>
         </tr>
         <tr>
             <td>Tiền rác</td>
-            <td id="tien-rac">30,000</td>
+            <td id="tien-rac"><<[Rac]>></td>
         </tr>
         <tr>
             <th>Tổng cộng</th>
-            <th id="tong-cong">2,416,500</th>
+            <th id="tong-cong"><<[TongThu]>></th>
         </tr>
     </table>
 
     <div>
-        <p><strong>Bằng chữ:</strong> Hai triệu bốn trăm mười sáu ngàn năm trăm đồng</p>
-        <p><strong>Thông tin chuyển khoản:</strong> Ngân hàng TMCP Á Châu. Tên chủ TK: Phạm Ba Lực. Số TK: LOCPHAT000041649.</p>
-        <p><strong>Ghi chú:</strong> Thanh toán trước ngày 10/11/2024</p>
+        <p><strong>Bằng chữ:</strong> <<[SoTienBangChu]>></p>
+        <p><strong>Thông tin chuyển khoản:</strong> <<[ThongTinChuyenKhoan]>></p>
+        <p><strong>Ghi chú:</strong> <<[GhiChu]>></p>
     </div>
+
+    <script>
+        // Dữ liệu thay thế
+        const data = {
+            Thang: "10",
+            Nam: "2024",
+            TuNgay: "01/10/2024",
+            DenNgay: "31/10/2024",
+            HoVaTenKH: "Dương Quốc Tân",
+            TenBDS: "BDSCT02 - Hẻm 80 Trần Văn Xã",
+            TenPhong: "BDSCT02 - MTA",
+            IDThu: "67f1f3c6 BDSCT02 - MTA 10 2024",
+            TienSoNgayThuePhong: "2,000,000",
+            SoDienCu: "1,020",
+            SoDienMoi: "1,123",
+            SoKWDienSuDung: "103",
+            TongTienDien: "360,500",
+            SoNuocCu: "30",
+            SoNuocMoi: "32",
+            SoM3NuocSuDung: "2",
+            TongTienNuoc: "26,000",
+            Rac: "30,000",
+            TongThu: "2,416,500",
+            SoTienBangChu: "Hai triệu bốn trăm mười sáu ngàn năm trăm đồng",
+            ThongTinChuyenKhoan: "Ngân hàng TMCP Á Châu. Tên chủ TK: Phạm Ba Lực. Số TK: LOCPHAT000041649.",
+            GhiChu: "Thanh toán trước ngày 10/11/2024"
+        };
+
+        // Thay thế các placeholder
+        for (const key in data) {
+            const elements = document.querySelectorAll(`#${key.toLowerCase()}`);
+            elements.forEach(element => {
+                element.textContent = data[key];
+            });
+        }
+    </script>
 </body>
 </html>
-
