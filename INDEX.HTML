@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hóa Đơn Tiền Nhà</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #dee2e6;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f1f1;
+        }
+        .header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .sub-header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">HÓA ĐƠN TIỀN NHÀ</div>
+    <div class="sub-header">
+        Tháng <span id="thang">10</span>/ <span id="nam">2024</span><br>
+        (Từ ngày <span id="tu-ngay">01/10/2024</span> đến <span id="den-ngay">31/10/2024</span>)
+    </div>
+
+    <table>
+        <tr>
+            <th colspan="2">Thông tin khách hàng</th>
+        </tr>
+        <tr>
+            <td>Họ tên KH</td>
+            <td id="ho-ten-kh">Dương Quốc Tân</td>
+        </tr>
+        <tr>
+            <td>Nhà</td>
+            <td id="nha">BDSCT02 - Hẻm 80 Trần Văn Xã</td>
+        </tr>
+        <tr>
+            <td>Phòng</td>
+            <td id="phong">BDSCT02 - MTA</td>
+        </tr>
+        <tr>
+            <td>ID Thu</td>
+            <td id="id-thu">67f1f3c6 BDSCT02 - MTA 10 2024</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Chi tiết</th>
+            <th>Số tiền (VND)</th>
+        </tr>
+        <tr>
+            <td>Tiền nhà (Từ ngày <span id="tu-ngay">01/10/2024</span> đến <span id="den-ngay">31/10/2024</span>)</td>
+            <td id="tien-nha">2,000,000</td>
+        </tr>
+        <tr>
+            <td>Tiền điện (CS cũ: 1,020 , CS mới: 1,123, SD: 103)</td>
+            <td id="tien-dien">360,500</td>
+        </tr>
+        <tr>
+            <td>Tiền nước (CS cũ: 30, CS mới: 32, SD: 2)</td>
+            <td id="tien-nuoc">26,000</td>
+        </tr>
+        <tr>
+            <td>Tiền rác</td>
+            <td id="tien-rac">30,000</td>
+        </tr>
+        <tr>
+            <th>Tổng cộng</th>
+            <th id="tong-cong">2,416,500</th>
+        </tr>
+    </table>
+
+    <div>
+        <p><strong>Bằng chữ:</strong> Hai triệu bốn trăm mười sáu ngàn năm trăm đồng</p>
+        <p><strong>Thông tin chuyển khoản:</strong> Ngân hàng TMCP Á Châu. Tên chủ TK: Phạm Ba Lực. Số TK: LOCPHAT000041649.</p>
+        <p><strong>Ghi chú:</strong> Thanh toán trước ngày 10/11/2024</p>
+    </div>
+</body>
+</html>
 
